@@ -1,0 +1,16 @@
+.btn{
+  font-family: 'Baloo 2', cursive;
+  background: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color: $white;
+  border: .2rem solid $redColor;
+  font-size: 2rem;
+
+  transition: $transTime;
+  
+  &:hover{
+    border: .2rem solid $redColor;
+    background-color: $redColor;
+  }
+}

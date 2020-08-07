@@ -1,0 +1,209 @@
+.portfolio{
+  overflow-y: hidden;
+  overflow-x: hidden;
+  
+  &__grid{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 5% 5% 85% 5%;
+    
+    @include respond(v1400) {
+      grid-template-columns: 10% 80% 10%;
+    }
+
+    @include respond(v1100) {
+      grid-template-columns: 5% 90% 5%;
+    }
+
+    @include respond(v1000) {
+      grid-template-columns: 100%;
+    }
+
+    @include respond(v600) {
+      grid-template-rows: 2% 8% 90%;
+    }
+
+    &::before{
+      content: "<Portfolio>";
+      @include beforeAfterTextBig();
+      top: 0;
+    }
+    &::after{
+      content: "</Portfolio>";
+      @include beforeAfterTextBig();
+      bottom: 0;
+    }
+  }
+
+  &__langs{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @include respond(v1000) {
+      grid-column: 1/2;
+    }
+
+    &-filter{
+      cursor: pointer;
+      padding: 0 3rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      transition: $transTime;
+
+      @include respond(v800){
+        font-size: 2rem;
+      }
+
+      @include respond(v600){
+        font-size: 1.8rem;
+        padding: 0 2rem;
+      }
+
+      @include respond(v450){
+        font-size: 1.6rem;
+        padding: 0 1rem;
+      }
+    }
+
+    &-active{
+      background-color: $redColor;
+    }
+  }
+
+  &__projects{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33333333%);
+    grid-template-rows: repeat(3, 33.33333333%);
+    align-items: center;
+
+    @include respond(v1000) {
+      grid-column: 1/2;
+    }
+
+    @include respond(v900) {
+      grid-template-columns: repeat(2, 50%);
+      grid-template-rows: initial;
+    }
+
+    @include respond(v400){
+      grid-template-columns: 10% 80% 10%;
+      grid-template-rows: initial;
+    }
+
+    &-project{
+      position: relative;
+      transition: $transTime;
+
+      @include respond(v400){
+        grid-column: 2/3;;
+      }
+
+      &-img{
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+        transition: $transTime;
+
+        &::after{
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+
+        & img{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          transition: $transTime;
+        }
+      }
+
+
+      &-info{
+        @include centerPage;
+        opacity: 0;
+        color: black;
+        // transition: .4s;
+
+        & p {
+          text-transform: capitalize;
+        }
+
+        & h1, & p{
+          transform: translateY(-100%);
+          transition: $transTime;
+        }
+
+        & button{
+          color: black;
+          padding: .7rem 2rem;
+          border: .1rem solid $redColor;
+          font-size: 1.6rem;
+          transform: translateY(100%);
+          transition: $transTime;
+
+          &:hover{
+            color: $white;
+            border: .1rem solid $redColor;
+          }
+        }
+
+      }
+
+      &-lang{
+        color: $redColor;
+      }
+
+      &:hover{
+        & .portfolio__projects-project-img{
+          background: rgba($white, .9);
+          & img{
+            z-index: -1;
+          }
+        }
+
+        & .portfolio__projects-project-info{
+          opacity: 1;
+
+          & h1, & p{
+            transform: translateY(50%);
+          }
+
+          & button{
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+@keyframes animateActive{
+  0%{
+    background: linear-gradient(to right, $redColor 0%, transparent 0%);
+  }
+
+  5%{
+    background: linear-gradient(to right, $redColor 50%, transparent 0%);
+  }
+
+  10%{
+    background: linear-gradient(to right, $redColor 100%);
+  }
+}

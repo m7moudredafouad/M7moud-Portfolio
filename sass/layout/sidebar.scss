@@ -1,0 +1,68 @@
+.sidebar{
+  background-color: $sidebarColor;
+  position: relative;
+  grid-column: 1/2;
+
+  @include respond(v800){
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+  
+  &__list{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    @include respond(v800){
+      flex-direction: row;
+      height: 100%;
+      justify-content: center;
+    }
+
+    &-item{
+      width: 100%;
+      text-align: center;
+      padding: 2rem 0;
+      cursor: pointer;
+      
+      @include respond(v1000) {
+        padding: 1.5rem 0;
+      }
+      
+      @include respond(v800) {
+        padding: 1rem 2rem;
+        width: auto;
+      }
+
+      @include respond(v600) {
+        padding: .5rem 2rem;
+        display: flex;
+        align-items: center;
+      }
+
+      & svg{
+        height: 3rem;
+        width: 3rem;
+        fill: $white;
+        transition: $transTime;
+
+        @include respond(v600) {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+
+
+    &-item:hover, &-active{        
+      & svg{
+        transform: scale(1.3);
+        fill: $redColor;
+      }
+    }
+  }
+
+}

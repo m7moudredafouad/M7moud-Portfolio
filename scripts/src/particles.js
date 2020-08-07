@@ -1,0 +1,1 @@
+particlesJS.load('home', '../scripts/others/particles.json');

@@ -1,0 +1,81 @@
+.home{
+
+  &__container{
+    @include centerPage;
+  }
+
+  & h1 span, h1 p{
+    display: inline-block;
+    cursor: context-menu;
+  }
+
+  &__name{
+    color: $redColor;
+
+  }
+
+  &__wave{
+    animation: wave 5s infinite linear;
+    animation-delay: 1.5s;
+
+  }
+}
+
+.animateHomeName{
+  animation: happyName 10s linear;
+}
+
+.char{
+  display: inline-block;
+  &:hover{
+    color: $lightBlue;
+  }
+}
+
+@keyframes wave{
+  0% {
+    transform: rotateZ(0deg);
+  }
+  4% {
+    transform: rotateZ(45deg);
+  }
+  8%{
+    transform: rotateZ(0deg);
+  }
+  12% {
+    transform: rotateZ(45deg);
+  }
+  16%{
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes happyName {
+  0%{
+    transform: scaleY(0.6)
+  }
+  1%{
+    transform: scaleY(0.5)
+  }
+  2%{
+    transform: scaleY(0.4)
+  }
+  3%{
+    transform: scaleY(0.3)
+  }
+  4%{
+    transform: scaleY(0.25)
+  }
+  5%{
+    transform: scaleY(1)
+  }
+  6%{
+    transform: scaleY(1.5)
+  }
+  7%{
+    transform: scaleY(.6)
+  }
+  8%{
+    transform: scaleY(1)
+  }
+}

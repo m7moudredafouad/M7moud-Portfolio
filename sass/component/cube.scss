@@ -1,0 +1,75 @@
+$CubeWidth: 20rem;
+$halfCube: $CubeWidth /2;
+
+$CubeWidthSmall: 15rem;
+$halfCubeSmall: $CubeWidthSmall /2;
+
+@mixin cubeHightWidth {
+  width: $CubeWidth;
+  height: $CubeWidth;
+
+  // @include respond(v800) {
+  //   width: $CubeWidthSmall;
+  //   height: $CubeWidthSmall;
+  // }
+}
+
+.cube{
+  @include centerPage;
+  perspective: 100rem;
+  perspective-origin: 50% 10rem;
+  
+  &__container{
+    position:relative;
+    margin: 0 auto;
+    @include cubeHightWidth();
+    transform-style:preserve-3d;
+    animation: spin 16s infinite linear;
+    border-radius: 50%;
+
+    & div{
+      position:absolute;
+      @include cubeHightWidth();
+
+      & span{
+        @include centerPage;
+        font-size: 4rem;
+        font-family: 'Caveat', cursive;
+        opacity: .6;
+        
+      }
+
+      &:nth-child(1){
+        transform: translateZ($halfCube);
+      }
+      
+      &:nth-child(2){
+        transform: rotateX(180deg) translateZ($halfCube);
+      }
+      
+      &:nth-child(3){
+        transform: rotateY(-90deg) translateZ($halfCube);
+      }
+      
+      &:nth-child(4){
+        transform:rotateY(90deg) translateZ($halfCube);
+      }
+      
+      &:nth-child(5){
+        transform: rotateX(90deg) translateZ($halfCube);
+      }
+      
+      &:nth-child(6){
+        transform:rotateX(-90deg) translateZ($halfCube);
+      }
+      
+    }
+
+  }
+}
+
+@keyframes spin {
+  
+  from { transform: rotateX(0) rotateZ(0deg) rotateZ(0deg); }
+  to { transform: rotateX(360deg) rotateZ(360deg) rotateZ(360deg);  }
+}

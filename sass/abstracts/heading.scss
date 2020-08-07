@@ -1,0 +1,73 @@
+.heading{
+  letter-spacing: .5rem;
+  text-align: center;
+  transition: $transTime;
+  
+  @include respond(v800) {
+    letter-spacing: .2rem;
+  }
+
+  &-upper{
+    text-transform: uppercase;
+  }
+  &-bold{
+    font-weight: 700;
+  }
+
+  &-text{
+    font-size: 2rem;
+    font-weight: 400;
+    @include respond(v800) {
+      font-size: 1.6rem;
+    }
+
+    @include respond(v400) {
+      font-size: 1.4rem;
+    }
+
+    &-sm{
+      font-size: 1.6rem;
+      letter-spacing: 0;
+      font-weight: 300;
+      opacity: .6;
+
+      @include respond(v1000) {
+        font-size: 1.4rem;
+      }
+
+      @include respond(v600) {
+        font-size: 1.6rem;
+      }
+
+      @include respond(v450) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+
+  &-1{
+    font-size: 5rem;
+    
+    @include respond(v800) {
+      font-size: 4rem;
+    }
+
+    @include respond(v450) {
+      font-size: 3rem;
+    }
+  }
+
+  &-3{
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    
+    @include respond(v1000) {
+      font-size: 2rem;
+    }
+
+    @include respond(v600) {
+      font-size: 1.6rem;
+    }
+  }
+}

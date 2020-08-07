@@ -1,0 +1,180 @@
+.about{
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  
+  &__grid{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 5% min-content 70% 5%;
+    align-items: center;
+
+    @include respond(v1400) {
+      grid-template-columns: 10% 80% 10%;
+    }
+
+    @include respond(v1000) {
+      grid-template-columns: 100%;
+    }
+
+    @include respond(v600) {
+      overflow-y: scroll;
+      height: 100%;
+    }
+    
+
+    &::before{
+      content: "<About>";
+      @include beforeAfterTextBig();
+      top: 0;
+    }
+    &::after{
+      content: "</About>";
+      @include beforeAfterTextBig();
+      bottom: 0;
+    }
+  }
+
+
+  &__features{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(4, 25%);
+    
+    @include respond(v1000) {
+      grid-column: 1/2;
+    }
+
+    @include respond(v600) {
+      grid-template-rows: repeat(2, 50%);
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+
+  &__feature{
+    &-img{
+      background-color: $sidebarColor;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 10rem;
+
+      @include respond(v800) {
+        width: 8rem;
+        height: 8rem;
+      }
+
+      @include respond(v600) {
+        width: 10rem;
+        height: 10rem;
+      }
+
+      & svg{
+        width: 5rem;
+        height: 5rem;
+        fill: $white;
+        
+        @include respond(v800) {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        @include respond(v600) {
+          width: 5rem;
+          height: 5rem;
+        }
+      }
+    }
+
+    & h3{
+      @include respond(v600) {
+        font-size: 2rem;
+      }
+    }
+
+    & h4 {
+      padding: 0 1rem;
+      
+      @include respond(v600) {
+        padding: .5rem 2rem;
+      }
+    }
+  }
+
+  &__me{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(2, 50%);
+
+    
+    @include respond(v1000) {
+      grid-column: 1/2;
+    }
+    @include respond(v600) {
+      grid-template-rows: max-content 70%;
+      grid-template-columns: 100%;
+      margin-top: 1rem;
+    }
+
+    
+    &-info{
+      position: relative;
+      padding: 4rem 0;
+
+      @include respond(v600) {
+        padding: 2rem 0;
+        grid-row: 1/2;
+      }
+
+      &-img{
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+
+        &::after{
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+
+        & img{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      & h4{
+        padding: 0 2rem;
+
+        @include respond(v600){
+          text-align: initial;
+        }
+      }
+
+
+    }
+
+    &-skills{
+      position: relative;
+
+      @include respond(v600) {
+        grid-row: 2/3;
+      }
+    }
+  }
+}

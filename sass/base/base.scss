@@ -1,0 +1,71 @@
+$mainColor: #162447;
+$sidebarColor: #1f4068;
+$white: #f1f1f1;
+$redColor: #e43f5a;
+$lightBlue: #42bdb4;
+$transTime: .4s;
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: .2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $redColor;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darken($redColor, 10);
+}
+
+body{
+    font-family: 'Baloo 2', cursive;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 4vw 96vw;
+    grid-template-rows: 100vh;
+    
+
+    @include respond(v1200) {
+        grid-template-columns: 6vw 94vw;
+    }
+
+    @include respond(v1000) {
+        grid-template-columns: 7vw 93vw;
+    }
+
+    @include respond(v800) {
+        grid-template-columns: 100vw;
+        grid-template-rows: 5vh 95vh;
+    }
+}

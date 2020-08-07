@@ -1,0 +1,38 @@
+@mixin respond($breakpoint) {
+    @if($breakpoint == v1400){
+        @media  only screen and (max-width: 87.5em) {@content}
+    };
+
+    @if($breakpoint == v1100){
+        @media  only screen and (max-width: 68.75em) {@content}
+    };
+
+    @if($breakpoint == v1200){
+        @media  only screen and (max-width: 75em) {@content}
+    };
+
+    @if($breakpoint == v1000){
+        @media  only screen and (max-width: 62.5em) {@content}
+    };
+
+    @if($breakpoint == v900){
+        @media  only screen and (max-width: 56.25em) {@content}
+    };
+
+    @if($breakpoint == v800){
+        @media  only screen and (max-width: 50em) {@content}
+    };
+
+    @if($breakpoint == v600){
+        @media  only screen and (max-width: 37.5em) {@content}
+    };
+
+    @if($breakpoint == v450){
+        @media  only screen and (max-width: 28.75em) {@content}
+    };
+
+    @if($breakpoint == v400){
+        @media  only screen and (max-width: 25em) {@content}
+    };
+
+}

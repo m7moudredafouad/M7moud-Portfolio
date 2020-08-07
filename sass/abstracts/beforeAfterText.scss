@@ -1,0 +1,25 @@
+@mixin  beforeAfterText {
+    font-family: 'Caveat', cursive;
+    text-transform: none;
+    position: absolute;
+    left: 0%;
+    font-size: 1.6rem;
+    opacity: .2;
+    @include respond(v600) {
+        content: '';
+    }
+}
+
+@mixin  beforeAfterTextBig {
+    @include beforeAfterText();
+    left: 5%;
+    font-size: 2rem;
+
+    @include respond(v1000) {
+        left: 0;
+    }
+
+    @include respond(v600) {
+        content: '';
+    }
+}

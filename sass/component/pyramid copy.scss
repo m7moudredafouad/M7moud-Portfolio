@@ -1,0 +1,77 @@
+$pyramidWidth: 20rem;
+
+.pyramid-wrap {
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-10rem;
+  perspective: 100rem;
+  perspective-origin: 50% 10rem;
+  // transform: scale(2);
+}
+
+.pyramid-rotate {
+  position: relative;
+  width: $pyramidWidth;
+  transform-style: preserve-3d;
+  animation: spin 16s infinite linear;
+
+  & svg, & span{
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    transform: translate(-4rem, 10rem);
+    opacity: 1;
+  }
+
+}
+
+.face {
+  position: absolute;
+  border: 10rem solid transparent;
+}
+
+.front {
+  bottom: -2rem;
+  border-bottom: $pyramidWidth solid rgba($sidebarColor, .1);
+  transform: translateZ(2.5rem) rotateX(30deg);
+}
+
+.back {
+  bottom: -2rem;
+  border-bottom: $pyramidWidth solid rgba($sidebarColor, .1);
+  transform: translateZ(-2.5rem) rotateY(180deg) rotateX(30deg);
+}
+
+.left {
+  bottom: -2rem;
+  left: 7.5rem;
+  border-bottom: $pyramidWidth solid rgba($sidebarColor, .1);
+  transform: rotateY(270deg) translateX(-10rem) rotateX(30deg);
+  transform-origin: center left;
+}
+
+.right {
+  bottom: -4rem;
+  right: 15rem;
+  border-bottom: $pyramidWidth solid rgba($sidebarColor, .1);
+  transform: rotateY(-270deg) translateX(10rem) rotateX(30deg);
+  transform-origin: top right;
+}
+
+.bottom {
+  width: 0rem;
+  height: 0rem;
+  background: rgba($sidebarColor, .1);
+  transform: rotateX(-90deg) translateY(-10rem) rotateY(180deg) ;
+  transform-origin:top center;
+
+  & svg{
+    transform: translate(-3rem, -3rem);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotateX(0) rotateY(0); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}

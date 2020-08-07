@@ -1,0 +1,82 @@
+@mixin animation {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  display: initial;
+}
+
+.body{
+  background-color: $mainColor;
+  position: relative;
+  color: $white;
+  grid-column: 2/3;
+  overflow: hidden;
+
+  @include respond(v800){
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+}
+
+.pageStyle{
+  @include centerPage;
+  height: 100%;
+  display: none;
+  text-align: center;
+}
+
+.pageActiveLeft{
+  @include animation();
+  animation-name: animatePageLeft;
+}
+
+.pageActiveRight{
+  @include animation();
+  animation-name: animatePageRight;
+}
+
+
+
+@keyframes animatePageLeft {
+  0%{
+    transform: translate(-100%, -50%);
+    opacity: 0;
+  }
+
+  60%{
+    transform: translate(-49%, -50%);
+    opacity: .6;
+  }
+
+  80%{
+    transform: translate(-52%, -50%);
+    opacity: .8;
+  }
+
+  100%{
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes animatePageRight {
+  0%{
+    transform: translate(0%, -50%);
+    opacity: 0;
+  }
+
+  60%{
+    transform: translate(-51%, -50%);
+    opacity: .6;
+  }
+
+  80%{
+    transform: translate(-48%, -50%);
+    opacity: .8;
+  }
+
+  100%{
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
