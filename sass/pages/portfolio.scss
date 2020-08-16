@@ -5,7 +5,7 @@
   &__grid{
     display: grid;
     grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 0% 15% max-content 0%;
+    grid-template-rows: 0% max-content max-content 0%;
     
     @include respond(v1400) {
       grid-template-columns: 10% 80% 10%;
@@ -19,14 +19,15 @@
       grid-template-columns: 0% 100% 0%;
     }
 
-    @include respond(v900) {
-      grid-template-rows: 0% 8% max-content 0%;
-    }
+    // @include respond(v900) {
+    //   grid-template-rows: 0% 8% max-content 0%;
+    // }
   }
 
   &__langs{
     grid-row: 2/3;
     grid-column: 2/3;
+    padding: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +65,7 @@
     overflow-y: scroll;
     display: grid;
     grid-template-columns: repeat(3, 33.33333333%);
-    grid-template-rows: repeat(3, 33.33333333%);
+    // grid-template-rows: repeat(3, 33.33333333%);
 
     @include respond(v900) {
       grid-template-columns: repeat(2, 50%);

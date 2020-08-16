@@ -33,14 +33,10 @@
       }
       
       @include respond(v800) {
-        padding: 0 2rem;
+        padding: 0 1.5rem;
         width: auto;
-      }
-
-      @include respond(v600) {
-        // padding: .5rem 2rem;
-        // display: flex;
-        // align-items: center;
+        display: flex;
+        align-items: center;
       }
 
       & svg{
