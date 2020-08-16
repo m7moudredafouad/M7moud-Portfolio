@@ -10,7 +10,7 @@
   </div>
 
 </div> */}
-const CreateProjectElement = (key, imgSrc, projectName, projectLang) => {
+const CreateProjectElement = (key, imgSrc, projectName, projectLang, projectLink = '#') => {
 
   let projectContainer = document.createElement('div');
   projectContainer.setAttribute('data-key', key)
@@ -37,9 +37,11 @@ const CreateProjectElement = (key, imgSrc, projectName, projectLang) => {
   infoLang.className = 'portfolio__projects-project-lang';
   infoLang.textContent = projectLang.join(' / ')
 
-  let infoBtn = document.createElement('button');
+  let infoBtn = document.createElement('a');
   infoBtn.className = 'btn heading-upper mt-5';
   infoBtn.textContent = 'View more'
+  infoBtn.href= projectLink
+  infoBtn.target = '_blank'
 
   infoContainer.appendChild(infoH1);
   infoContainer.appendChild(infoLang);

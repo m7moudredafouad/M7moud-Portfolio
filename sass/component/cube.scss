@@ -1,17 +1,17 @@
-$CubeWidth: 20rem;
+$CubeWidth: 25rem;
 $halfCube: $CubeWidth /2;
 
-$CubeWidthSmall: 15rem;
+$CubeWidthSmall: 20rem;
 $halfCubeSmall: $CubeWidthSmall /2;
 
 @mixin cubeHightWidth {
   width: $CubeWidth;
   height: $CubeWidth;
 
-  // @include respond(v800) {
-  //   width: $CubeWidthSmall;
-  //   height: $CubeWidthSmall;
-  // }
+  @include respond(v800) {
+    width: $CubeWidthSmall;
+    height: $CubeWidthSmall;
+  }
 }
 
 .cube{
@@ -22,45 +22,65 @@ $halfCubeSmall: $CubeWidthSmall /2;
   &__container{
     position:relative;
     margin: 0 auto;
-    @include cubeHightWidth();
     transform-style:preserve-3d;
     animation: spin 16s infinite linear;
-    border-radius: 50%;
+    @include cubeHightWidth();
 
     & div{
       position:absolute;
+      background-color: rgba($darkBlue, .8);
       @include cubeHightWidth();
 
       & span{
         @include centerPage;
-        font-size: 4rem;
-        font-family: 'Caveat', cursive;
-        opacity: .6;
+        opacity: 1;
+        & svg{
+          height: 10rem;
+          width: 10rem;
+        }
         
       }
 
       &:nth-child(1){
         transform: translateZ($halfCube);
+        @include respond(v800) {
+          transform: translateZ($halfCubeSmall);
+        }
       }
       
       &:nth-child(2){
         transform: rotateX(180deg) translateZ($halfCube);
+        @include respond(v800) {
+          transform: rotateX(180deg) translateZ($halfCubeSmall);
+        }
       }
       
       &:nth-child(3){
         transform: rotateY(-90deg) translateZ($halfCube);
+        @include respond(v800) {
+          transform: rotateY(-90deg) translateZ($halfCubeSmall);
+        }
       }
       
       &:nth-child(4){
         transform:rotateY(90deg) translateZ($halfCube);
+        @include respond(v800) {
+          transform:rotateY(90deg) translateZ($halfCubeSmall);
+        }
       }
       
       &:nth-child(5){
         transform: rotateX(90deg) translateZ($halfCube);
+        @include respond(v800) {
+          transform: rotateX(90deg) translateZ($halfCubeSmall);
+        }
       }
       
       &:nth-child(6){
         transform:rotateX(-90deg) translateZ($halfCube);
+        @include respond(v800) {
+          transform:rotateX(-90deg) translateZ($halfCubeSmall);
+        }
       }
       
     }

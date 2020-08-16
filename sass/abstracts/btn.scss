@@ -2,12 +2,22 @@
   font-family: 'Baloo 2', cursive;
   background: none;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: .5rem 2rem;
   color: $white;
   border: .2rem solid $redColor;
   font-size: 2rem;
 
   transition: $transTime;
+
+  @include respond(v800) {
+    padding: .3rem 1.3rem;
+    font-size: 1.8rem;
+  }
+
+  @include respond(v600) {
+    padding: .2rem 1.2rem;
+    font-size: 1.6rem;
+  }
   
   &:hover{
     border: .2rem solid $redColor;

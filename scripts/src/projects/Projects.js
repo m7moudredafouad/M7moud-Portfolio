@@ -5,57 +5,38 @@ const ProjectsContainer = document.getElementById('projects')
 let projects = [
   {
     id: '1',
-    image: './assets/img/2.jpg',
-    title: 'Dominos',
-    langs: ['nodejs', 'reactjs']
+    image: './assets/img/codenotes.png',
+    title: 'CodeNote',
+    link: '#',
+    langs: ['nodejs', 'reactjs', 'react native']
   },
   {
     id: '2',
-    image: './assets/img/3.jpg',
+    image: './assets/img/mdomino.png',
     title: 'Dominos',
-    langs: ['javascript', 'nodejs']
+    link: 'https://mdomino.netlify.app/',
+    langs: ['javascript']
   },
   {
     id: '3',
-    image: './assets/img/4.jpg',
-    title: 'Dominos',
-    langs: ['javascript', 'nodejs']
+    image: './assets/img/takeitoff.png',
+    title: 'Takeitoff',
+    link: 'https://take-itoff.web.app/',
+    langs: ['nodejs', 'reactjs']
   },
   {
     id: '4',
-    image: './assets/img/5.jfif',
-    title: 'Dominos',
+    image: './assets/img/movmusify.png',
+    title: 'Musify',
+    link: 'https://movmusify.herokuapp.com/',
     langs: ['javascript', 'nodejs']
   },
   {
     id: '5',
-    image: './assets/img/6.jfif',
-    title: 'Dominos',
-    langs: ['nodejs']
-  },
-  {
-    id: '6',
-    image: './assets/img/7.jfif',
-    title: 'Dominos',
-    langs: ['javascript', 'nodejs', 'reactjs']
-  },
-  {
-    id: '7',
-    image: './assets/img/8.jfif',
-    title: 'Dominos',
-    langs: ['javascript', 'reactjs']
-  },
-  {
-    id: '8',
-    image: './assets/img/9.jfif',
-    title: 'Dominos',
-    langs: ['nodejs', 'reactjs']
-  },
-  {
-    id: '9',
-    image: './assets/img/10.jfif',
-    title: 'Dominos',
-    langs: ['javascript', 'reactjs']
+    image: './assets/img/graphcalc.png',
+    title: 'Graph Drawer',
+    link: 'https://graphcalc.netlify.app/',
+    langs: ['javascript']
   }
 ]
 
@@ -104,7 +85,7 @@ const RenderProjects = (filterLang) => {
     }
 
     if(!found) {
-          let newProject = ProjectElement(project.id, project.image, project.title, project.langs);
+          let newProject = ProjectElement(project.id, project.image, project.title, project.langs, project.link);
           newProject.setAttribute('data-keep', 'true')
           ProjectsContainer.insertBefore(newProject, ProjectsContainer.children[idx])
           FoundArray.push(idx)

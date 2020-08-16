@@ -1,13 +1,17 @@
+@mixin  infoPosition {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .about{
-  overflow-y: hidden;
+  overflow-y: scroll;
   overflow-x: hidden;
 
   
   &__grid{
-    height: 100%;
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 5% min-content 70% 5%;
+    grid-template-rows: 1% max-content max-content 2%;
     align-items: center;
 
     @include respond(v1400) {
@@ -15,25 +19,19 @@
     }
 
     @include respond(v1000) {
-      grid-template-columns: 100%;
+      grid-template-columns: 0% 100% 0%;
     }
 
-    @include respond(v600) {
-      overflow-y: scroll;
-      height: 100%;
-    }
-    
-
-    &::before{
-      content: "<About>";
-      @include beforeAfterTextBig();
-      top: 0;
-    }
-    &::after{
-      content: "</About>";
-      @include beforeAfterTextBig();
-      bottom: 0;
-    }
+    // &::before{
+    //   content: "<About>";
+    //   @include beforeAfterTextBig();
+    //   top: 0;
+    // }
+    // &::after{
+    //   content: "</About>";
+    //   @include beforeAfterTextBig();
+    //   bottom: 0;
+    // }
   }
 
 
@@ -44,10 +42,6 @@
     grid-template-rows: 100%;
     grid-template-columns: repeat(4, 25%);
     
-    @include respond(v1000) {
-      grid-column: 1/2;
-    }
-
     @include respond(v600) {
       grid-template-rows: repeat(2, 50%);
       grid-template-columns: repeat(2, 50%);
@@ -74,6 +68,10 @@
         width: 10rem;
         height: 10rem;
       }
+      @include respond(v450) {
+        width: 7rem;
+        height: 7rem;
+      }
 
       & svg{
         width: 5rem;
@@ -89,12 +87,20 @@
           width: 5rem;
           height: 5rem;
         }
+
+        @include respond(v450) {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
       }
     }
 
     & h3{
       @include respond(v600) {
         font-size: 2rem;
+      }
+      @include respond(v450) {
+        font-size: 1.6rem;
       }
     }
 
@@ -115,9 +121,6 @@
     grid-template-columns: repeat(2, 50%);
 
     
-    @include respond(v1000) {
-      grid-column: 1/2;
-    }
     @include respond(v600) {
       grid-template-rows: max-content 70%;
       grid-template-columns: 100%;
@@ -136,8 +139,7 @@
 
       &-img{
         position: relative;
-        max-width: 100%;
-        margin: 0 auto;
+        @include infoPosition();
 
         &::after{
           content: "";
@@ -159,11 +161,11 @@
       }
 
       & h4{
-        padding: 0 2rem;
-
-        @include respond(v600){
-          text-align: initial;
-        }
+        @include infoPosition();
+        font-weight: 300;
+        text-align: center;
+        line-break: anywhere;
+        padding-top: 2rem;
       }
 
 
@@ -171,7 +173,7 @@
 
     &-skills{
       position: relative;
-
+      overflow-x: hidden;
       @include respond(v600) {
         grid-row: 2/3;
       }

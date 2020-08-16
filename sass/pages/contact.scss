@@ -1,4 +1,39 @@
 .contact{
-  // @include centerPage;
+
+  &__grid{
+    @include centerPage;
+  }
+
+  &__heading{
+    cursor: context-menu;
+  }
+
+  &__links{
+    display: flex;
+    justify-content: center;
+    
+    & a {
+      padding: 0 2rem;
+
+      & svg{
+        fill: $white;
+        height: 2.5rem;
+        width: 2.5rem;
+        transition: $transTime;
+
+        @include respond(v450) {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      &:hover{
+        & svg {
+          fill: $redColor;
+        }
+      }
+
+    }
+  }
 
 }

@@ -4,13 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="M7moud" />
+    <meta property="og:type" content="website" />     
+    <meta property="og:image" content="https://m7moud.web.app/assets/img/1.jpg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:url" content="https://m7moud.web.app" />
+    <meta property="og:fb:admins" content="100038817682609" />
+
+    <!-- <meta name="twitter:site" content="@" /> -->
+    <meta name="twitter:title" content="M7moud" />
+    <meta name="twitter:card" content="summary" />    
+    <meta name="twitter:description" content="Professionally connected with the web development industry and information technology for many years" />
+    <meta name="twitter:url" content="https://m7moud.web.app/" />
+
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
     <script src="./scripts/others/particles.js" defer></script>
     <script src="./scripts/build/bundle.js" defer type="module"></script>
-    <title>Mova</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/icons/site.webmanifest">
+    <title>M7moud</title>
 </head>
 
 <body>
@@ -46,18 +65,19 @@
                     <h1 class="heading heading-1 heading-bold">
                         <span>Hello</span><span class="home__wave">👋</span>
                         <span>, I'm</span> 
-                        <p class="home__name" id="myName">
+                        <p class="home__name">
                             <span class="char">M</span><span class="char">a</span><span class="char">h</span><span class="char">m</span><span class="char">o</span><span class="char">u</span><span class="char">d</span>
                         </p><span>.</span>
                     </h1>
                     <h4 class="heading heading-text">I'm a full stack web developer.</h4>
+                    <a href="./Mahmoud Reda CV.pdf" download="download" style="text-decoration: none;" class="btn mt-2">Download CV</a>
                     <button class="btn mt-2" id="goToAbout">View more</button>
                 </div>
             </div>
 
             <div class="pageStyle about" id="about">
                 <div class="about__grid">
-                    <div class="about__features">
+                    <div class="about__features mb-2">
 
                         <div class="about__feature">
                             <div class="about__feature-img">
@@ -110,10 +130,7 @@
                                 <div class="about__me-info-img">
                                     <img src="./assets/img/1.jpg" alt="My Photo" />
                                 </div>
-                                <h4 class="heading heading-text-sm mt-2">I'm a Full Stack Web Developer. I have serious
-                                    passion fro
-                                    developing intuitive, dynamic Websites with really awsome UI/UX Designs.
-                                    And I have experience with developing mobile application with react Native
+                                <h4>I'm a Full Stack Web Developer. I have serious passion for developing intuitive, dynamic Websites with really awsome UI/UX Designs. And I have experience with developing mobile application with react Native
                                 </h4>
                             </section>
 
@@ -123,22 +140,28 @@
                                 <div class="cube">
                                     <div class="cube__container">
                                         <div>
-                                            <span>Javascript</span>
+                                            <!-- <span>Javascript</span> -->
+                                            <span><svg><use xlink:href="../assets/all.svg#icon-javascript"></use></svg></span>
                                         </div>
                                         <div>
-                                            <span>HTML5</span>
+                                            <!-- <span>HTML5</span> -->
+                                            <span><svg><use xlink:href="../assets/all.svg#icon-html5"></use></svg></span>
                                         </div>
                                         <div>
-                                            <span>Sass</span>
+                                            <!-- <span>Sass</span> -->
+                                            <span><svg><use xlink:href="../assets/all.svg#icon-sass"></use></svg></span>
                                         </div>
                                         <div>
-                                            <span>Nodejs</span>
+                                            <!-- <span>Nodejs</span> -->
+                                            <span><svg><use xlink:href="../assets/all.svg#icon-node"></use></svg></span>
                                         </div>
                                         <div>
-                                            <span>Reactjs</span>
+                                            <!-- <span>Reactjs</span> -->
+                                            <span><svg><use xlink:href="../assets/all.svg#icon-react1"></use></svg></span>
                                         </div>
                                         <div>
-                                            <span>Mongodb</span>
+                                            <!-- <span>Mongodb</span> -->
+                                            <span><svg><use xlink:href="../assets/all.svg#icon-mongodb"></use></svg></span>
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +172,7 @@
 
             <div class="pageStyle portfolio" id="portfolio">
                 <div class="portfolio__grid">
-                    <ul class="portfolio__langs mb-2" id="filterList">
+                    <ul class="portfolio__langs" id="filterList">
                         <li data-filter="" class="portfolio__langs-filter portfolio__langs-active">All</li>
                         <li data-filter="javascript" class="portfolio__langs-filter">Javascript</li>
                         <li data-filter="nodejs" class="portfolio__langs-filter">Nodejs</li>
@@ -162,8 +185,20 @@
             </div>
 
             <div class="pageStyle contact" id="contact">
-                <h1 class="heading heading-1 heading-upper heading-bold">Contact</h1>
-                <h4 class="heading heading-text">Full stack web developer</h4>
+                <div class="contact__grid">
+                    <h1 class="heading heading-1 heading-upper heading-bold contact__heading">
+                        <span class="char">C</span><span class="char">o</span><span class="char">n</span><span class="char">t</span><span class="char">a</span><span class="char">c</span><span class="char">t</span>
+                    </h1>
+                    <h4 class="heading heading-text contact__heading">Have a question or wants to work together?</h4>
+
+                    <div class="contact__links mt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100038817682609" target="_blabk"><svg><use xlink:href="./assets/all.svg#icon-facebook"></use></svg></a>
+                        <a href="#" target="_blabk"><svg><use xlink:href="./assets/all.svg#icon-twitter"></use></svg></a>
+                        <a href="#" target="_blabk"><svg><use xlink:href="./assets/all.svg#icon-linkedin2"></use></svg></a>
+                        <a href="https://github.com/m7moudredafouad" target="_blabk"><svg><use xlink:href="./assets/all.svg#icon-github"></use></svg></a>
+                    </div>
+                </div>
+
             </div>
 
 

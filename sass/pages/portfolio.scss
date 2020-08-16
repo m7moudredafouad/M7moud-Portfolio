@@ -1,12 +1,11 @@
 .portfolio{
-  overflow-y: hidden;
+  overflow-y: scroll;
   overflow-x: hidden;
   
   &__grid{
     display: grid;
-    height: 100%;
     grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 5% 5% 85% 5%;
+    grid-template-rows: 0% 15% max-content 0%;
     
     @include respond(v1400) {
       grid-template-columns: 10% 80% 10%;
@@ -17,22 +16,11 @@
     }
 
     @include respond(v1000) {
-      grid-template-columns: 100%;
+      grid-template-columns: 0% 100% 0%;
     }
 
-    @include respond(v600) {
-      grid-template-rows: 2% 8% 90%;
-    }
-
-    &::before{
-      content: "<Portfolio>";
-      @include beforeAfterTextBig();
-      top: 0;
-    }
-    &::after{
-      content: "</Portfolio>";
-      @include beforeAfterTextBig();
-      bottom: 0;
+    @include respond(v900) {
+      grid-template-rows: 0% 8% max-content 0%;
     }
   }
 
@@ -42,10 +30,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    @include respond(v1000) {
-      grid-column: 1/2;
-    }
 
     &-filter{
       cursor: pointer;
@@ -81,11 +65,6 @@
     display: grid;
     grid-template-columns: repeat(3, 33.33333333%);
     grid-template-rows: repeat(3, 33.33333333%);
-    align-items: center;
-
-    @include respond(v1000) {
-      grid-column: 1/2;
-    }
 
     @include respond(v900) {
       grid-template-columns: repeat(2, 50%);
@@ -137,7 +116,11 @@
         @include centerPage;
         opacity: 0;
         color: black;
-        // transition: .4s;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         & p {
           text-transform: capitalize;
@@ -148,12 +131,13 @@
           transition: $transTime;
         }
 
-        & button{
+        & a{
           color: black;
           padding: .7rem 2rem;
           border: .1rem solid $redColor;
           font-size: 1.6rem;
           transform: translateY(100%);
+          text-decoration: none;
           transition: $transTime;
 
           &:hover{
@@ -183,7 +167,7 @@
             transform: translateY(50%);
           }
 
-          & button{
+          & a{
             transform: translateY(0);
           }
         }
