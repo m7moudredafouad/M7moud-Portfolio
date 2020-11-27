@@ -32,7 +32,7 @@ navList.addEventListener('click', (event) => {
     
     // Check if this page is what user wants and add acrivating classes
     if(bodyChild.id === listItem.dataset.divName) {
-      nextPageFromLeft ? bodyChild.classList.add('pageActiveLeft') : bodyChild.classList.add('pageActiveRight');
+      nextPageFromLeft ? bodyChild.classList.add('pageActiveRight') : bodyChild.classList.add('pageActiveLeft');
     }
   }
 

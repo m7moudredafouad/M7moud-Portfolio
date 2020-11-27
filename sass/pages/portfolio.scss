@@ -30,7 +30,13 @@
     padding: 2rem 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    &-list{
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     &-filter{
       cursor: pointer;
@@ -62,9 +68,9 @@
   &__projects{
     grid-row: 3/4;
     grid-column: 2/3;
-    overflow-y: scroll;
+
     display: grid;
-    grid-template-columns: repeat(3, 33.33333333%);
+    grid-template-columns: repeat(3, 33.33333333333%);
     // grid-template-rows: repeat(3, 33.33333333%);
 
     @include respond(v900) {
@@ -79,7 +85,7 @@
 
     &-project{
       position: relative;
-      transition: $transTime;
+      background: $white;
 
       @include respond(v400){
         grid-column: 2/3;;
@@ -87,11 +93,11 @@
 
       &-img{
         position: relative;
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
         transition: $transTime;
-
+        
         &::after{
           content: "";
           display: block;
@@ -101,44 +107,45 @@
         & img{
           position: absolute;
           top: 0;
-          bottom: 0;
           left: 0;
-          right: 0;
+          // bottom: 0;
+          // right: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
           object-position: center;
-          transition: $transTime;
         }
       }
 
 
       &-info{
         @include centerPage;
-        opacity: 0;
         color: black;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        opacity: 0;
+        transition: $transTime;
 
-        & p {
+        &--lang{
           text-transform: capitalize;
+          color: $redColor;
         }
 
-        & h1, & p{
+        &--details{
           transform: translateY(-100%);
           transition: $transTime;
         }
 
-        & a{
+        &--btn{
           color: black;
           padding: .7rem 2rem;
           border: .1rem solid $redColor;
           font-size: 1.6rem;
-          transform: translateY(100%);
           text-decoration: none;
+          transform: translateY(100%);
           transition: $transTime;
 
           &:hover{
@@ -149,29 +156,20 @@
 
       }
 
-      &-lang{
-        color: $redColor;
-      }
-
       &:hover{
         & .portfolio__projects-project-img{
-          background: rgba($white, .9);
-          & img{
-            z-index: -1;
-          }
+            filter: opacity(.1);
         }
 
         & .portfolio__projects-project-info{
           opacity: 1;
 
-          & h1, & p{
-            transform: translateY(50%);
-          }
-
-          & a{
+          &--details, &--btn{
             transform: translateY(0);
           }
+
         }
+
       }
     }
 

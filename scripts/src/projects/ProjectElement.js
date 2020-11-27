@@ -29,22 +29,28 @@ const CreateProjectElement = (key, imgSrc, projectName, projectLang, projectLink
   let infoContainer = document.createElement('div');
   infoContainer.className = 'portfolio__projects-project-info';
 
+  let infoDetails = document.createElement('div');
+  infoDetails.className = 'portfolio__projects-project-info--details';
+
+
   let infoH1 = document.createElement('h1');
   infoH1.className = 'heading heading-3 heading-upper portfolio__projects-project-name';
   infoH1.textContent = projectName
 
   let infoLang = document.createElement('p');
-  infoLang.className = 'portfolio__projects-project-lang';
-  infoLang.textContent = projectLang.join(' / ')
+  infoLang.className = 'portfolio__projects-project-info--lang';
+  infoLang.textContent = projectLang.join(' / ');
+
+  infoDetails.appendChild(infoH1);
+  infoDetails.appendChild(infoLang);
 
   let infoBtn = document.createElement('a');
-  infoBtn.className = 'btn heading-upper mt-5';
+  infoBtn.className = 'btn heading-upper mt-5 portfolio__projects-project-info--btn';
   infoBtn.textContent = 'View more'
   infoBtn.href= projectLink
   infoBtn.target = '_blank'
 
-  infoContainer.appendChild(infoH1);
-  infoContainer.appendChild(infoLang);
+  infoContainer.appendChild(infoDetails);
   infoContainer.appendChild(infoBtn);
 
 
